@@ -1,68 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# hv-challenge-infinite_scroll
 
-## Available Scripts
+This challenge was completed within a four hour timeframe
 
-In the project directory, you can run:
+## Architecture
 
-### `yarn start`
+* This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* [react-infinite-scroller](https://github.com/CassetteRocks/react-infinite-scroller)
 
-Runs the app in the development mode.<br />
+## Running the application
+
+Runs the app in the development mode by executing the following command from the project root directory
+
+```
+yarn start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Running the test suite
 
-### `yarn test`
+Invoke the test suite by running the following command from the project root directory:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+yarn test
+```
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Notes
+* Given the time constraint, I chose to leverage an existing [infinite scroll UI library](https://github.com/CassetteRocks/react-infinite-scroller) to complete the assessment. If this functionality were necessary to be built from scratch (perhaps for efficiency scenarios like removing/appending DOM nodes when existing nodes are out of the window scope), I would leverage the [Intersectional Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) and [React useRef hook](https://reactjs.org/docs/hooks-reference.html#useref) to identify when to trigger an external API call - keeping the number of calls to a minimum by referencing the first and last list item elements, window/scroll threshold for triggering an HTTP request, as well as modifying the pagination and fetch limit parameters via state
+* If I had more time to iterate, I would continue tweaking the unit tests - especially the mocking, then style the application and components prior to submitting a feature pull-request
