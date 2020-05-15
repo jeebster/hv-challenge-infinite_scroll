@@ -26,5 +26,6 @@ yarn test
 ```
 
 ## Notes
+* I set a maximum time-limit of four hours to complete this exercise
 * Given the time constraint, I chose to leverage an existing [infinite scroll UI library](https://github.com/CassetteRocks/react-infinite-scroller) to complete the assessment. If this functionality were necessary to be built from scratch (perhaps for efficiency scenarios like removing/appending DOM nodes when existing nodes are out of the window scope), I would leverage the [Intersectional Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) and [React useRef hook](https://reactjs.org/docs/hooks-reference.html#useref) to identify when to trigger an external API call - keeping the number of calls to a minimum by referencing the first and last list item elements, window/scroll threshold for triggering an HTTP request, as well as modifying the pagination and fetch limit parameters via state
 * If I had more time to iterate, I would continue tweaking the unit tests - especially the mocking, then style the application and components prior to submitting a feature pull-request
